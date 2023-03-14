@@ -1,0 +1,19 @@
+{
+  "name": "bhj-homeworks",
+  "version": "1.0.0",
+  "description": "## Блок 1. Основы разработки интерфейсов",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nlotomsk/bhj-homeworks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nlotomsk/bhj-homeworks/issues"
+  },
+  "homepage": "https://github.com/nlotomsk/bhj-homeworks#readme"
+}

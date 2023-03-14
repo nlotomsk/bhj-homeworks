@@ -25,25 +25,33 @@ document.onclick = function(event) {
     var target = event.target 
                         console.log(target.className);
     var array = target.className.split(' ');
-                        console.log(array);
-        for (let i = 0; i < array.length; i++) {
-                        console.log([i]);
+    let totalElem = array.length
+                        //console.log(array);
+        for (let i = 0; i < totalElem; i++) {
+                        //console.log([i]);
             if (array[i] === 'modal__close'){
-                for (let j = 0; j < array.length; j++) {
+                for (let j = 0; j < totalElem; j++) {
                     if (array[j] === 'show-success'){
                         console.log(target);
-                    } else {
-                    const dead2 = document.getElementById("modal_main");
-                            console.log(dead2);
-                    dead2.className = "modal";
-                        console.log(dead2);
-                    }
-                }
+                        console.log("in");
+                        const dead2 = document.getElementById("modal_success");
+                                console.log(dead2);
+                        dead2.className = "modal modal_active";
+                    } 
+                    // else {
+                    // const dead2 = document.getElementById("modal_main");
+                    //         console.log(dead2);
+                    // dead2.className = "modal";
+                    //     console.log("exit");
+                    // }
+                } 
+                const dead2 = document.getElementById("modal_success");
+                             console.log(dead2);
+                     dead2.className = "modal";
+                         console.log("exit");
             } 
 
-            // else if (array[i] == 'show-success') {
-            //     console.log(target); 
-            // }
+            
         }
     // if (target.className[0] == 'modal__close') {
     //     const dead1 = document.getElementById("modal modal_active");
