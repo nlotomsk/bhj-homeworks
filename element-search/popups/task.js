@@ -1,82 +1,33 @@
-// const dead = document.getElementsByClassName("modal");
-// console.log(dead.length);
-// const var1 = dead.length;
-// for (let i = 0; i < var1; i++) {
-//     const element1 = document.getElementsByClassName("modal")[0];
-
-//     console.log(element1.className);
-//     element1.className = 'modal modal_aclive';
-//     //console.log(element1.className);
-//     //element.className = "modal_active";
-//     //dead[i].className.textContent = `${dead[i].className.textContent} modal_aclive`;
-//     //dead[i].className = "modal_aclive";
-//     //dead[i].className = "modal_active";
-//     //console.log(dead[0].className);
-//     //console.log(dead[1].className);
-//     //console.log(dead[i].className.textContent);
-// }
-
 const dead = document.getElementById("modal_main");
-console.log(dead);
 dead.className = "modal modal_active";
-console.log(dead);
-
-document.onclick = function(event) {
-    var target = event.target 
-                        console.log(target.className);
+document.onclick = function (event) {
+    var target = event.target
     var array = target.className.split(' ');
     let totalElem = array.length
-                        //console.log(array);
-        for (let i = 0; i < totalElem; i++) {
-                        //console.log([i]);
-            if (array[i] === 'modal__close'){
-                for (let j = 0; j < totalElem; j++) {
-                    if (array[j] === 'show-success'){
-                        console.log(target);
-                        console.log("in");
-                        const dead2 = document.getElementById("modal_success");
-                                console.log(dead2);
-                        dead2.className = "modal modal_active";
-                    } 
-                    // else {
-                    // const dead2 = document.getElementById("modal_main");
-                    //         console.log(dead2);
-                    // dead2.className = "modal";
-                    //     console.log("exit");
-                    // }
-                } 
-                const dead2 = document.getElementById("modal_success");
-                             console.log(dead2);
-                     dead2.className = "modal";
-                         console.log("exit");
-            } 
+    for (let i = 0; i < totalElem; i++) {
+        if (array[i] === 'modal__close') {
+            for (let j = 0; j < totalElem; j++) {
+                if (array[j] === 'show-success') {
+                    const dead2 = document.getElementById("modal_success");
+                    dead2.className = "modal modal_active";
+                    return;
+                }
+            }
+            const dead3 = document.getElementById("modal_main");
+            var array2 = dead3.className.split(' ');
 
-            
+            for (let k = 0; k < array2.length; k++) {
+                if (array2[k] === 'modal_active') {
+                    dead3.className = "modal";
+                }
+            }
+            const dead4 = document.getElementById("modal_success");
+            var array3 = dead4.className.split(' ');
+            for (let p = 0; p < array3.length; p++) {
+                if (array3[p] === 'modal_active') {
+                    dead4.className = "modal";
+                }
+            }
         }
-    // if (target.className[0] == 'modal__close') {
-    //     const dead1 = document.getElementById("modal modal_active");
-    //     console.log(dead1);
-    //     dead.className = "modal";
-    //     console.log(dead1);}
-    // dead.textContent = shot;
-    //     if (shot == 5) {
-    //         reset();
-    //         alert("Победа");
-    //     }
-    // }
-    // else if (target.className == 'hole') {
-    // ++miss;
-    // lost.textContent = miss;
-    //     if (miss == 10) {
-    //         reset();
-    //         alert("Вы проиграли");       
-    //     }
-    // }
-    // function reset() {
-    //     shot=0;
-    //     miss=0;
-    //     dead.textContent = shot;
-    //     lost.textContent = miss; 
-    //     return;
-    // }
+    }
 }
