@@ -13,7 +13,7 @@ next.onclick = function () {
     } else {
         indexSlide = 0;
     }
-    sliders[indexSlide].className = 'slider__item_active';
+    sliders[indexSlide].className = 'slider__item slider__item_active';
 };
 
 prev.onclick = function () {
@@ -24,5 +24,5 @@ prev.onclick = function () {
     } else {
         indexSlide = sliders.length - 1;
     }
-    sliders[indexSlide].className = 'slider__item_active'; 
+    sliders[indexSlide].className = 'slider__item slider__item_active'; 
 };
