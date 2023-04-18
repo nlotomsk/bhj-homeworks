@@ -11,7 +11,6 @@ listTab.forEach(function(item,index){
         const activeContentRemove = document.querySelector('.tab__content_active');
         activeContentRemove.classList.remove('tab__content_active');
 
-
         contentTab[index].classList.add('tab__content_active');
 
     })
