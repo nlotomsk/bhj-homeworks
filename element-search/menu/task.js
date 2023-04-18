@@ -1,54 +1,25 @@
+const linkMenu =  document.querySelectorAll('.menu__link');
 
+console.log(linkMenu);
 
-// const dead = document.getElementById("dead");
-// const lost = document.getElementById("lost");
+for (let i=0; i < linkMenu.length; i++) {
+    let menuList = linkMenu[i].closest('.menu__item').querySelector('ul.menu_sub');
+    //console.log(menu);
+    if (menuList) {
+        menuList[i].addEventListener('click', function (event) {
+            //console.log(event);
+            event.preventDefault();
 
-// let shot = 0;
-// let miss = 0
- document.onclick = function(event) {
-     var target = event.target;
-     const nextElem = target.nextElementSibling;
-    
-     console.log(nextElem);
-     //var array = target.className.split(' ');
-     //console.log(array);
-     if (nextElem !== null) {
-        let listElements = document.querySelector(nextElem);
-
-        var classElemArray = nextElem.className.split(' ');
-        classElemArray.push('menu_active');
-        nextElem.className = classElemArray.join(' ');
-        
-        // let exclusiveElements = document.querySelectorAll('a');
-        // exclusiveElements.closest("href");
-
-        console.log('Проверка');
-
-        // let listElements = document.getElementsByTagName("ul");
-        // let firstElement = listElements.item(0);
-        // console.log(firstElement.parentElement); // <ul class="exclusive">...</ul>
-        // console.log(firstElement.closest("ul")); // <ul class="exclusive">...</ul>
-        //console.log(firstElement.closest("*")); 
-//     ++shot
-//     dead.textContent = shot;
-//         if (shot == 5) {
-//             reset();
-//             alert("Победа");
-//         }
+            const dropMenuActiv = document.querySelector('.menu_active');
+            
+            if (menuList.classList.contains('menu_active')) {
+                menuList.classList.remove('menu_active');
+            } else if (dropMenuActiv) {
+                dropMenuActiv.classList.remove('menu_active');
+                menuList.classList.add('menu_active');
+            } else {
+                menuList.classList.add('menu_active');
+            }
+        })
     }
-//     else if (target.className == 'hole') {
-//     ++miss;
-//     lost.textContent = miss;
-//         if (miss == 10) {
-//             reset();
-//             alert("Вы проиграли");       
-//         }
-//     }
-//     function reset() {
-//         shot=0;
-//         miss=0;
-//         dead.textContent = shot;
-//         lost.textContent = miss; 
-//         return;
-//     }
 }
