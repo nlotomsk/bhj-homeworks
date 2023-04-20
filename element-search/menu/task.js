@@ -1,25 +1,28 @@
-const linkMenu =  document.querySelectorAll('.menu__link');
+const menuSub = [...document.querySelectorAll('.menu_sub')];
 
-console.log(linkMenu);
+for (let elem in menuSub) {
+    let menuSubActive = menuSub[elem].closest('.menu__item');
+  
+    let menuSubHref = menuSubActive.querySelector('a');
 
-for (let i=0; i < linkMenu.length; i++) {
-    let menuList = linkMenu[i].closest('.menu__item').querySelector('ul.menu_sub');
-    //console.log(menu);
-    if (menuList) {
-        menuList[i].addEventListener('click', function (event) {
-            //console.log(event);
-            event.preventDefault();
+    menuSubHref.onclick = function(element) {
+        
+        for (let k in menuSub){
+            if (menuSub[k].classList.contains('menu_active')) {
+                menuSub[k].classList.remove('menu_active');
+                
+                if ((menuSub[k].parentNode.querySelector('a').textContent !== element.target.textContent)) {
+                    menuSub[elem].classList.add('menu_active');
+                    return false;
+                }
 
-            const dropMenuActiv = document.querySelector('.menu_active');
-            
-            if (menuList.classList.contains('menu_active')) {
-                menuList.classList.remove('menu_active');
-            } else if (dropMenuActiv) {
-                dropMenuActiv.classList.remove('menu_active');
-                menuList.classList.add('menu_active');
-            } else {
-                menuList.classList.add('menu_active');
-            }
-        })
+                if ((menuSub[k].parentNode.querySelector('a').textContent == element.target.textContent)) {
+                    return false;
+                }
+            }   
+        }
+        menuSub[elem].classList.add('menu_active');
+        return false;
+         
     }
 }
