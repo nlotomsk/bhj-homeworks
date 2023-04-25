@@ -30,10 +30,10 @@ function bot() {
 }
 
 window.addEventListener('keyup', (event) => {
-    if (event.key == 'Enter' && chatWidgetInput.value.length > 0) {
+    if (event.key == 'Enter' && chatWidgetInput.value.trim() !== '') {
         chatWidgetMessages.innerHTML += `<div class="message message_client">
         <div class="message__time">${time()}</div>
-        <div class="message__text">${chatWidgetInput.value}!</div>
+        <div class="message__text">${chatWidgetInput.value}</div>
     </div>`
         setTimeout(() => {
             chatWidgetMessages.innerHTML += `<div class="message">
